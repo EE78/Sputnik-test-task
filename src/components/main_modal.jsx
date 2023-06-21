@@ -18,7 +18,7 @@ import {
 const regText =
   "Большое спасибо за то, что рассматриваете мой вариант решения тестового задания!";
 const passText =
-  "Надеюсь, что смогу учиться у Вас, а затем стать частью команды!";
+  "Надеюсь, что смогу учиться у Вас, и затем стать частью команды!";
 
 export const MainModal = ({ isMainModalOpen, handleMainModalOpen }) => {
   const [isRegHelpOpen, setIsRegHelpOpen] = useState(false);
