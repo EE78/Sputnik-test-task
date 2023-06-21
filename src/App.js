@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { MainModal } from "./components/main_modal";
+import { OpenerButton } from "./components/button_opener";
+import { App, AppText } from "./ui/styled_app";
 
-function App() {
+const Form = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleOpen = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <App>
+      <h1>Привет :)</h1>
+      <AppText>
+        Меня зовут Евгений Еремин. Я - начинающий frontend-разработчик.
+      </AppText>
+      <AppText>
+        Прошу рассмотреть мой вариант решения Вашего тестового задания.
+      </AppText>
+      <OpenerButton handleOpen={handleOpen} />
+      <MainModal isMainModalOpen={isOpen} handleMainModalOpen={handleOpen} />
+    </App>
   );
-}
+};
 
-export default App;
+export default Form;
